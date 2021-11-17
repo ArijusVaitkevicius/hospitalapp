@@ -1,0 +1,40 @@
+<odoo>
+
+
+        <!-- Doctor type form view -->
+        <record model="ir.ui.view" id="doctor_type_form_view">
+            <field name="name">doctor_type.form.view</field>
+            <field name="model">hospitalapp.doctor_type</field>
+            <field name="arch" type="xml">
+                <form string="Doctor type form">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Doctor type tree view -->
+        <record model="ir.ui.view" id="doctor_type_tree_view">
+            <field name="name">doctor_type.tree.view</field>
+            <field name="model">hospitalapp.doctor_type</field>
+            <field name="arch" type="xml">
+                <tree string="Doctor type list">
+                        <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="doctor_type_list_action">
+        <field name="name">Doctor_types</field>
+        <field name="res_model">hospitalapp.doctor_type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add new doctor type</p>
+        </field>
+    </record>
+
+    <menuitem id="doctor_types_menu" name="Doctor types" parent="main_hospitalapp_menu"/>
+    <menuitem id="doctor_type_menu" name="Doctor type" parent="doctor_types_menu" action="doctor_type_list_action"/>
+
+</odoo>

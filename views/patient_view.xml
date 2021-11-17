@@ -1,0 +1,53 @@
+<odoo>
+
+
+        <!-- Patient form view -->
+        <record model="ir.ui.view" id="patient_form_view">
+            <field name="name">patient.form.view</field>
+            <field name="model">hospitalapp.patient</field>
+            <field name="arch" type="xml">
+                <form string="Patient form">
+                    <group>
+                        <field name="name"/>
+                        <field name="surname"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="identity_number"/>
+                        <field name="general_practitioner_id"/>
+                        <field name="diagnosis_ids"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Patient tree view -->
+        <record model="ir.ui.view" id="patient_tree_view">
+            <field name="name">patient.tree.view</field>
+            <field name="model">hospitalapp.patient</field>
+            <field name="arch" type="xml">
+                <tree string="Patient list">
+                        <field name="name"/>
+                        <field name="surname"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="identity_number"/>
+                        <field name="general_practitioner_id"/>
+                        <field name="diagnosis_ids"/>
+                </tree>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="patient_list_action">
+        <field name="name">Patients</field>
+        <field name="res_model">hospitalapp.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add new patient</p>
+        </field>
+    </record>
+
+    <menuitem id="main_hospitalapp_menu" name="Hospital App"/>
+    <menuitem id="patients_menu" name="Patients" parent="main_hospitalapp_menu"/>
+    <menuitem id="patient_menu" name="Patient" parent="patients_menu" action="patient_list_action"/>
+
+</odoo>

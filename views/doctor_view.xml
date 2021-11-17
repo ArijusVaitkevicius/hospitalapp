@@ -1,0 +1,48 @@
+<odoo>
+
+
+        <!-- Doctor form view -->
+        <record model="ir.ui.view" id="doctor_form_view">
+            <field name="name">doctor.form.view</field>
+            <field name="model">hospitalapp.doctor</field>
+            <field name="arch" type="xml">
+                <form string="Doctor form">
+                    <group>
+                        <field name="name"/>
+                        <field name="surname"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="doctor_type_ids"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Doctor tree view -->
+        <record model="ir.ui.view" id="doctor_tree_view">
+            <field name="name">doctor.tree.view</field>
+            <field name="model">hospitalapp.doctor</field>
+            <field name="arch" type="xml">
+                <tree string="Doctor list">
+                        <field name="name"/>
+                        <field name="surname"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="doctor_type_ids"/>
+                </tree>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="doctor_list_action">
+        <field name="name">Doctors</field>
+        <field name="res_model">hospitalapp.doctor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add new doctor</p>
+        </field>
+    </record>
+
+    <menuitem id="doctors_menu" name="Doctors" parent="main_hospitalapp_menu"/>
+    <menuitem id="doctor_menu" name="Doctor" parent="doctors_menu" action="doctor_list_action"/>
+
+</odoo>

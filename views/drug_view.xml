@@ -1,0 +1,40 @@
+<odoo>
+
+
+        <!-- Drug form view -->
+        <record model="ir.ui.view" id="drug_form_view">
+            <field name="name">drug.form.view</field>
+            <field name="model">hospitalapp.drug</field>
+            <field name="arch" type="xml">
+                <form string="Drug form">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Drug tree view -->
+        <record model="ir.ui.view" id="drug_tree_view">
+            <field name="name">drug.tree.view</field>
+            <field name="model">hospitalapp.drug</field>
+            <field name="arch" type="xml">
+                <tree string="Drug list">
+                        <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="drug_list_action">
+        <field name="name">Drugs</field>
+        <field name="res_model">hospitalapp.drug</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add new drug</p>
+        </field>
+    </record>
+
+    <menuitem id="drugs_menu" name="Drugs" parent="main_hospitalapp_menu"/>
+    <menuitem id="drug_menu" name="Drug" parent="drugs_menu" action="drug_list_action"/>
+
+</odoo>

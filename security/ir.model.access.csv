@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hospitalapp_patient,hospitalapp.patient,model_hospitalapp_patient,base.group_user,1,1,1,1
+hospitalapp_doctor_type,hospitalapp.doctor_type,model_hospitalapp_doctor_type,base.group_user,1,1,1,1
+hospitalapp_doctor,hospitalapp.doctor,model_hospitalapp_doctor,base.group_user,1,1,1,1
+hospitalapp_diagnosis,hospitalapp.diagnosis,model_hospitalapp_diagnosis,base.group_user,1,1,1,1
+hospitalapp_prescription,hospitalapp.prescription,model_hospitalapp_prescription,base.group_user,1,1,1,1
+hospitalapp_receptionist,hospitalapp.receptionist,model_hospitalapp_receptionist,base.group_user,1,1,1,1
+hospitalapp_appointment,hospitalapp.appointment,model_hospitalapp_appointment,base.group_user,1,1,1,1
+hospitalapp_drug,hospitalapp.drug,model_hospitalapp_drug,base.group_user,1,1,1,1
+hospitalapp_prescription_line,hospitalapp.prescription_line,model_hospitalapp_prescription_line,base.group_user,1,1,1,1
